@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit_pet</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ pet.name }}</h1>
+
+{% if pet.photo_url %}
+<img class="image" src="{{ pet.photo_url }}">
+{% endif %}
+
+<h2>Update</h2>
+
+<form method="POST">
+  {% include "_form.html" %}
+  <button class="btn btn-primary" type="submit">Update</button>
+</form>
+</body>
+</html>
